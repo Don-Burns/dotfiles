@@ -1,0 +1,4 @@
+# ignore file for what chezmoi will sync from this repo to the home dir
+README.md
+cspell.json
+prompt

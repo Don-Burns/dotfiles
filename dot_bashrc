@@ -121,6 +121,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+########################^^^^ WSL DEFAULTS ^^^^#################################
+## prompt
+# using oh-my-posh
+# The config file path is what applies
+eval "$(oh-my-posh init bash --config ~/.config/oh_my_posh/config.json)"
 
 ## ssh agent
 # # ssh agent: https://github.com/rupor-github/wsl-ssh-agent
