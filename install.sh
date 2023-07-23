@@ -6,6 +6,7 @@
 # -u: exit on unset variables
 set -eu
 
+# install chezmoi
 if ! chezmoi="$(command -v chezmoi)"; then
   bin_dir="${HOME}/.local/bin"
   chezmoi="${bin_dir}/chezmoi"

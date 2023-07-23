@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# This file is trying to work with both unix and windows based systems
+# because of this it has a `.ps1` extension since windows cares about this
+# unix can just take advantage of the shebang, which must at the top of the file
+
+## {{ .chezmoi.os }} # can be `windows` or `linux`
+{{ if eq .chezmoi.os "linux" }}
+pathadd() {
+  # add to $PATH if not already there
+    if [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+# need curl installed.
+if ! command -v oh-my-posh >/dev/null; then
+  curl -s https://ohmyposh.dev/install.sh | sudo bash -s
+  # using custom dir so we don't need sudo
+  # user_bin from .chezmoidata
+  ## mkdir --parents {{ .user_bin }} 
+  ## curl -s https://ohmyposh.dev/install.sh | bash -s -- -d {{ .user_bin }}
+  ## pathadd "{{ .user_bin }}/oh-my-posh"
+else
+  echo "oh-my-posh is already install skipping install"
+fi
+
+{{ else if eq .chezmoi.os "windows" }}
+
+winget install JanDeDobbeleer.OhMyPosh -s winget
+
+{{ end }}
+
