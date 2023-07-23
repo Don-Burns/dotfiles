@@ -1,4 +1,0 @@
-# Manage config for chezmoi
-[edit]
-  command = "code"
-  args = ["--wait"]
