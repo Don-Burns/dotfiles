@@ -14,12 +14,12 @@ pathadd() {
 }
 # need curl installed.
 if ! command -v oh-my-posh >/dev/null; then
-  curl -s https://ohmyposh.dev/install.sh | sudo bash -s
+  ## curl -s https://ohmyposh.dev/install.sh | sudo bash -s
   # using custom dir so we don't need sudo
   # user_bin from .chezmoidata
-  ## mkdir --parents {{ .user_bin }} 
-  ## curl -s https://ohmyposh.dev/install.sh | bash -s -- -d {{ .user_bin }}
-  ## pathadd "{{ .user_bin }}/oh-my-posh"
+  mkdir --parents {{ .user_bin }}
+  curl -s https://ohmyposh.dev/install.sh | bash -s -- -d {{ .user_bin }}
+  pathadd "{{ .user_bin }}/oh-my-posh"
 else
   echo "oh-my-posh is already install skipping install"
 fi
