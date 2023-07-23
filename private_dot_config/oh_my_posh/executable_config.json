@@ -11,11 +11,16 @@
         {
           "type": "session",
           "style": "diamond",
-          "foreground": "p:black",
-          "background": "p:grey",
+          "background": "p:black",
           "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b0",
           "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }} "
+        },
+        {
+          "type": "os",
+          "style": "diamond",
+          "template": "{{ if .WSL }}WSL {{ end }}{{ .Icon }}\ue0b1 ",
+          "background": "p:black",
+          "trailing_diamond": "\ue0b0"
         },
         {
           "type": "path",
@@ -25,7 +30,9 @@
           "background": "p:orange",
           "template": " \uea83 {{ path .Path .Location }} ",
           "properties": {
-            "style": "folder"
+            "home_icon": "\uf015",
+            "style": "agnoster_short",
+            "max_depth": 3
           }
         },
         {
@@ -78,6 +85,7 @@
       ]
     },
     {
+      // prompt on right hand side of line
       "type": "rprompt",
       "segments": [
         {
@@ -120,14 +128,14 @@
           "style": "plain",
           "foreground": "p:white",
           "background": "transparent",
-          "template": "in <p:blue><b>{{ .Name }}</b></> "
+          "template": "{{ if eq .Name \"bash\"}}<p:green><b>\uebca</b></>{{ else if .Name }}<p:blue><b>\udb82\ude0a</b></>{{ else }}<p:blue><b>{{ .Name }}</b></>{{ end }}"
         },
         {
           "type": "time",
           "style": "plain",
           "foreground": "p:white",
           "background": "transparent",
-          "template": "at <p:blue><b>{{ .CurrentDate | date \"15:04:05\" }}</b></>"
+          "template": "<p:grey><b> {{ .CurrentDate | date \"15:04:05\" }}</b></>"
         }
       ]
     }
