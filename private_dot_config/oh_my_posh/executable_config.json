@@ -128,7 +128,7 @@
           "style": "plain",
           "foreground": "p:white",
           "background": "transparent",
-          "template": "{{ if eq .Name \"bash\"}}<p:green><b>\uebca</b></>{{ else if .Name }}<p:blue><b>\udb82\ude0a</b></>{{ else }}<p:blue><b>{{ .Name }}</b></>{{ end }}"
+          "template": "{{ if eq .Name \"bash\"}}<p:green><b>\uebca</b></>{{ else if eq .Name \"pwsh\" }}<p:blue><b>\udb82\ude0a</b></>{{ else }}<p:blue><b>{{ .Name }}</b></>{{ end }}"
         },
         {
           "type": "time",
