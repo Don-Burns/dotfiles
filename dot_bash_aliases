@@ -1,0 +1,8 @@
+# aliases
+alias python='python3.11'
+alias gp='git pull'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias nvim=~/nvim-linux64/bin/nvim
+alias lg=lazygit
+
