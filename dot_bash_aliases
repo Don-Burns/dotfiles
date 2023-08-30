@@ -5,4 +5,5 @@ alias gc='git checkout'
 alias gcb='git checkout -b'
 alias nvim=~/nvim-linux64/bin/nvim
 alias lg=lazygit
+alias activate='source .venv/bin/activate'
 
