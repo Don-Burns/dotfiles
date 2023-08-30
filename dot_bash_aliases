@@ -1,5 +1,4 @@
 # aliases
-alias python='python3.11'
 alias gp='git pull'
 alias gc='git checkout'
 alias gcb='git checkout -b'
