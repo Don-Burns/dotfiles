@@ -81,6 +81,11 @@
           "properties": {
             "always_enabled": true
           }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "template": "\n ↳"
         }
       ]
     },
