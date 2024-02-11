@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Install any packages that are required for the dotfiles to work.
+{{ if eq .chezmoi.os "linux" }}
+echo "Installing packages for Linux"
+sudo apt install -y ripgrep fd-find fzf git
+{{ end }}
