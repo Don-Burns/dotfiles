@@ -81,6 +81,11 @@
           "properties": {
             "always_enabled": true
           }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "template": "\n ↳"
         }
       ]
     },
@@ -136,11 +141,6 @@
           "foreground": "p:white",
           "background": "transparent",
           "template": "<p:grey><b> {{ .CurrentDate | date \"15:04:05\" }}</b></>"
-        },
-        {
-          "type": "text",
-          "style": "plain",
-          "template": "\n ↳"
         }
       ]
     }
