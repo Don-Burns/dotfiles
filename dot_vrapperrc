@@ -1,0 +1,3 @@
+" # vrapper config for dbeaver or other eclipse based IDEs using vim keybindings
+" # see: https://vrapper.sourceforge.net/documentation/?topic=configuration#config
+set clipboard=unnamedplus
