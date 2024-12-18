@@ -127,7 +127,9 @@ fi
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
-
+if [ -d "$HOME/bin/nvim-linux64/bin" ]; then
+    PATH="$HOME/bin/nvim-linux64/bin:$PATH"
+fi
 ## prompt
 # using oh-my-posh
 # The config file path is what applies

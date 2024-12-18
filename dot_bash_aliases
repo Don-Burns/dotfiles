@@ -2,7 +2,6 @@
 alias gp='git pull'
 alias gc='git checkout'
 alias gcb='git checkout -b'
-alias nvim=~/nvim-linux64/bin/nvim
 alias lg=lazygit
 alias activate='source .venv/bin/activate'
 # switch project with fuzzy finder on dir name
