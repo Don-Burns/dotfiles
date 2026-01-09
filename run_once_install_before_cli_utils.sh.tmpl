@@ -5,4 +5,14 @@
 echo "Installing packages for Linux"
 sudo apt update # make sure the repos are up to date
 sudo apt install -y ripgrep fd-find fzf git
+
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+#! WSL-specific code
+# associate xdg-open for things with wsl-open in ~/bin
+# links
+wsl-open -w
+# images
+wsl-open -a image.png
+{{ end }}
+
 {{ end }}
