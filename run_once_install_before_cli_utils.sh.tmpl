@@ -15,4 +15,22 @@ wsl-open -w
 wsl-open -a image.png
 {{ end }}
 
+echo 'Installing cargo (needed for tree-sitter-cli in neovim setup)'
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+echo 'installing neovim and its dependencies'
+wget 'https://github.com/neovim/neovim/releases/download/v0.12.2/nvim-linux-x86_64.tar.gz'
+tar xzvf nvim-linux-x86_64.tar.gz
+# move to ~/bin/nvim-linux64
+mkdir -p ~/bin
+mv nvim-linux-x86_64 ~/bin/nvim-linux64
+# install tree-sitter-cli (needed for nvim-treesitter)
+cargo install tree-sitter-cli --locked
+# clone neovim config down
+## backup existing config
+if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/nvim" ]; then
+    echo "Backing up existing nvim config to ${XDG_CONFIG_HOME:-$HOME/.config}/nvim.bak"
+    mv "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim.bak
+fi
+git clone https://github.com/Don-Burns/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 {{ end }}
