@@ -33,4 +33,12 @@ if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/nvim" ]; then
     mv "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim.bak
 fi
 git clone https://github.com/Don-Burns/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+
+echo 'installing lazygit'
+wget 'https://github.com/jesseduffield/lazygit/releases/download/v0.65.0/lazygit_0.65.0_linux_x86_64.tar.gz'
+tar -xzvf lazygit_0.65.0_linux_x86_64.tar.gz
+mv lazygit ~/bin/lazygit
+echo 'installing delta for lazygit diffs'
+cargo install git-delta
+
 {{ end }}
