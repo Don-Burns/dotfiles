@@ -34,6 +34,13 @@ if [ -d "${XDG_CONFIG_HOME:-$HOME/.config}/nvim" ]; then
 fi
 git clone https://github.com/Don-Burns/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
+echo 'Setting git options'
+git config --global core.editor "nvim"
+# set git to update stacked branches, see notes for more
+git config --global rebase.updateRefs true
+# set neovim to be default difftool
+git config --global diff.tool nvimdiff
+
 echo 'installing lazygit'
 wget 'https://github.com/jesseduffield/lazygit/releases/download/v0.65.0/lazygit_0.65.0_linux_x86_64.tar.gz'
 tar -xzvf lazygit_0.65.0_linux_x86_64.tar.gz
