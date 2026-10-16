@@ -6,3 +6,6 @@ alias lg=lazygit
 alias activate='source .venv/bin/activate'
 # switch project with fuzzy finder on dir name
 alias sp='cd $(FZF_DEFAULT_COMMAND="fdfind --type directory --exact-depth 1 . ~/src" fzf)'
+
+alias n='nvim'
+alias nf='nvim $(FZF_DEFAULT_COMMAND="fdfind --type file --hidden --follow --exclude .git --exclude *_cache/**" fzf)'
